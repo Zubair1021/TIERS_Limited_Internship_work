@@ -1,0 +1,241 @@
+//__________________________________________________________________Task 3 By Muhammad Zubair
+
+// -------------------------------------Exercise 1 -----------------------------------
+//Call this in main
+class  FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(title: Text("Exercise 1",style: TextStyle(fontSize: 35, color: Colors.purple),), backgroundColor: Colors.lightGreenAccent, ),
+      body:Container(
+        width: 600,
+        height: 600,
+        margin: EdgeInsets.all(100),
+        decoration: BoxDecoration(
+            color: Colors.lightBlueAccent,
+            border: Border.all(color: Colors.blueGrey,width: 3),
+            borderRadius: BorderRadius.circular(10)
+
+        ),
+
+     child:Column(
+       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+       children: [
+
+         // Box 1 in Column
+         Container(
+       width: 100,
+       height: 100,
+       margin: EdgeInsets.only(top:5),
+       decoration: BoxDecoration(
+           color: Colors.yellowAccent,
+           border: Border.all(color: Colors.blueGrey,width: 3),
+           borderRadius: BorderRadius.circular(10)
+         ),
+         ),
+
+         // Box 2 in Column
+         Container(
+           width: 100,
+           height: 100,
+           decoration: BoxDecoration(
+               color: Colors.brown,
+               border: Border.all(color: Colors.blueGrey,width: 3),
+               borderRadius: BorderRadius.circular(10)
+           ),
+         ),
+
+         // Box 3 in Column
+         Container(
+           width: 100,
+           height: 100,
+           margin: EdgeInsets.only(bottom:5),
+           decoration: BoxDecoration(
+               color: Colors.greenAccent,
+               border: Border.all(color: Colors.blueGrey,width: 3),
+               borderRadius: BorderRadius.circular(10)
+           ),
+         ),
+       ],
+       ),
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------------------
+
+// -------------------------------------Exercise 2 ---------------------------------------
+
+class FirstScreen_2 extends StatelessWidget {
+  const FirstScreen_2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Exercise 2'),
+        backgroundColor: Colors.amberAccent,
+      ),
+      body: Row(
+        children: [
+          //First Container with Row
+
+          Container(
+            height: 300,
+            width: 300,
+            margin: EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: Colors.lightBlueAccent,
+              border: Border.all(color: Colors.blueGrey, width: 2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(
+              mainAxisAlignment:MainAxisAlignment.spaceAround,
+              children: [
+
+                // Box 1 in Row
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.purpleAccent,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                // Second Container with Column
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                // Box 3 in Row
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.deepOrangeAccent,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // New Container with Column
+          Container(
+            height: 300,
+            width: 300,
+            margin: EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: Colors.lightGreen,
+              border: Border.all(color: Colors.blueGrey, width: 2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Box 1 in Column
+                Container(
+                  height: 60,
+                  width: 60,
+                  margin: EdgeInsets.only(top:5),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                // Box 2 in Column
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.yellow,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                // Box 3 in Column
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black38,
+                    border: Border.all(color: Colors.blueGrey, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------------------
+
+// -------------------------------------Exercise 3 ---------------------------------------
+class FirstScreen_3 extends StatelessWidget {
+  const FirstScreen_3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Exercise 3',style:TextStyle(color: Colors.white),),backgroundColor: Colors.black54,),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+
+         width: 250,
+         height: 250,
+          margin: EdgeInsets.only(top:20),
+         decoration: BoxDecoration(
+
+              color: Colors.yellowAccent,
+             border: Border.all(color: Colors.blueGrey,width: 3),
+           borderRadius: BorderRadius.circular(10)
+       ),
+              child: Text(
+                'Container 1',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+
+                ),
+              ),
+            ),
+            Container(
+              width: 250,
+              height: 250,
+              margin: EdgeInsets.only(top:20),
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+              child: Text(
+                'Container 2',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+
+                ),
+              ),
+            ),
+          ],
+        )
+      ),
+    );
+  }
+}

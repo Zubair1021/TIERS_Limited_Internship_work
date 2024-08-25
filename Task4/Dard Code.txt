@@ -1,0 +1,364 @@
+//__________________ Task Done by Muhammad Zubair
+
+
+//-------------------------------- Exercise 1 ----------------------------------
+class statlesswidget extends StatelessWidget {
+  const statlesswidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('vertically scrollable list',style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),),backgroundColor:CupertinoColors.lightBackgroundGray,),
+
+      body: Center(
+
+        child: SingleChildScrollView(
+          child: Column(
+            
+          children: [
+            // -----Container 1
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.brown,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 2
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.deepOrangeAccent,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+
+            //--------Container 3
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 4
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+
+            //--------Container 5
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.teal,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+
+            //--------Container 6
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 7
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.brown,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 8
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.deepPurpleAccent,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 9
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.indigo,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+            //--------Container 10
+
+            Container(
+              width: 200,
+              height: 200,
+              margin: EdgeInsets.only(top: 10,bottom: 10),
+              decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
+                  border: Border.all(color: Colors.blueGrey,width: 3),
+                  borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+
+          ],
+          )
+        )
+      ),
+    );
+  }
+}
+
+//---------------------------------------------------------------------------------------------
+
+//-------------------------------- Exercise 2 (Google Clone) ----------------------------------
+
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_task2/main.dart';
+
+//-----Used Color Code
+const searchColor = Color.fromRGBO(48, 49, 52, 1);
+const blueColor = Color.fromRGBO(138, 180, 248, 1);
+const footerColor = Color.fromRGBO(23, 23, 23, 1);
+
+class GoogleClone extends StatelessWidget {
+  const GoogleClone({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //----Design of AppBar
+    appBar: AppBar (
+      backgroundColor: backgroundColor,
+      actions: [
+      TextButton(onPressed: () {},
+          child: const Text("Gmail", style: TextStyle(color: Colors.white),) ),
+        TextButton(onPressed: () {},
+            child: const Text("Images", style: TextStyle(color: Colors.white),) ),
+        TextButton(onPressed: () {},
+            child:  IconButton(onPressed: () {}, icon:Image.asset("lib/assets/Images/more-apps.png",color: Colors.white,)) ),
+        TextButton(onPressed: () {},
+            child:  CircleAvatar(
+    radius: 20,
+    backgroundImage: AssetImage("lib/assets/Images/me.png")
+
+    )
+        )
+    ],),
+      
+      
+      body: Center(
+        child: Column(
+
+          //----Design of main picture
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 50),
+              width:300,
+              height:150,
+            child:Image.asset("lib/assets/Images/google-logo.png")
+            ),
+ //---Design of Search Bar
+          Container(
+          // padding: EdgeInsets.all(16),
+
+      width: 700,
+
+      child: TextFormField(
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight:FontWeight.normal
+        ),
+        decoration: InputDecoration(
+
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30))
+          ),
+
+          prefixIcon: Icon(Icons.search),
+          suffixIcon: Image.asset("lib/assets/Images/mic-icon.png"),
+
+
+          // suffixIcon: Image.asset("lib/assets/Images/mic-icon.png"),
+        ),
+        onChanged: (value) {
+          print(value);
+        },
+
+      ),),
+
+//---Design of Buttons Below Search Below
+            Container(
+              margin: EdgeInsets.only(top: 20), // Adds top margin to the Container
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(width: 10),
+                    MaterialButton(
+                      padding: EdgeInsets.all(20),
+                      color: searchColor,
+                      onPressed: () {},
+                      child: Text(
+                        "Google Search",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    MaterialButton(
+                      padding: EdgeInsets.all(20),
+                      color: searchColor,
+                      onPressed: () {},
+                      child: Text(
+                        "I'm Feeling Lucky",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                  ],
+                ),
+              ),
+            ),
+//---Design of Lines of Differents Avaliable languages
+            Container(
+              margin:EdgeInsets.only(top:10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                Text("Google offered in: ",style: TextStyle(color: Colors.white),),
+            Container(
+              margin: EdgeInsets.only(left:8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children:
+                [
+            Text(' \t\t\tاردو',style: TextStyle(color: blueColor , ),),
+            Text('\t\t\tپشتو',style: TextStyle(color: blueColor),),
+            Text('\t\t\tسندھی',style: TextStyle(color: blueColor),),
+               ]
+              )
+            )
+          ],
+            )),
+//---Design of Footer
+
+//Footer Band 1
+            Container(
+              margin: EdgeInsets.only(top:173),
+             child: Column(
+
+               children: [
+//Footer Band 1
+            Container(
+
+         decoration: BoxDecoration(
+             color: footerColor,
+           border: Border(
+             bottom: BorderSide(
+               color: searchColor
+             )
+           )
+         ),
+         child: Padding(
+           padding:const EdgeInsets.all(5),
+           child:Row(
+             children: [
+               SizedBox(width: 5),
+               Text('Pakistan',style: TextStyle(color: Colors.white , ),),
+             ],
+           )
+         ),
+
+       ),
+//Footer Band 2
+               Container(
+         color: footerColor,
+         child: Padding(
+           padding: const EdgeInsets.all(5),
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 children: const [
+                   SizedBox(width: 5),
+                   Text('About',style: TextStyle(color: Colors.white , ),),
+                   SizedBox(width: 10),
+                   Text('Advertising',style: TextStyle(color: Colors.white , ),),
+                   SizedBox(width: 10),
+                   Text('Business',style: TextStyle(color: Colors.white , ),),
+                   SizedBox(width: 10),
+                   Text('How Search Work',style: TextStyle(color: Colors.white , ),),
+           ]
+               ),
+
+               Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   children: const [
+                     Text('Privacy',style: TextStyle(color: Colors.white , ),),
+                     SizedBox(width: 8),
+                     Text('Terms',style: TextStyle(color: Colors.white , ),),
+                     SizedBox(width: 8),
+                     Text('Settings',style: TextStyle(color: Colors.white , ),),
+                     SizedBox(width: 5),
+                   ]
+               )
+
+             ],
+           ),
+         ),
+       )
+  ]
+            )
+            )
+          ],
+      ),
+      ),
+    );
+  }
+}

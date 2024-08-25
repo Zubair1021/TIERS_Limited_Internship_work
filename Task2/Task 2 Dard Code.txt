@@ -1,0 +1,112 @@
+//------------------------------------------------ Task By Muhammad Zubair (Teirs Mobile Developement Internship --
+
+// ---------------------Exercise 1--------------------
+ void main()
+ {
+   const age = 20;
+   const name = "Muhammad Zubair";
+   List<String> fav_color =['Red' , 'Black' ,'Aqua'];
+
+   print('***** Name/Age ');
+   print('My name is $name \n and Age is $age');
+   print('***** Favorite colors');
+   for( var color in fav_color ){
+     print('$color ');
+   }
+
+ }
+
+// ---------------------------------------------------
+
+// ---------------------Exercise 2--------------------
+ void main()
+ {
+   int num=5;
+   if(num%2 == 0)
+     print('$num is Even');
+   if(num%2 != 0)
+     print('$num is ODD');
+
+ }
+// ---------------------------------------------------
+
+// ---------------------Exercise 3--------------------
+ void main()
+ {
+   double Area;
+   Area = circle_area(5);
+   print('The Area of the Circle is $Area');
+ }
+ double circle_area(int Radius){
+   return 3.14*Radius*Radius;
+ }
+// ---------------------------------------------------
+// ---------------------Exercise 4--------------------
+ class Car{
+   String make;
+   String model;
+   int year;
+
+   Car(this.make,this.model,this.year);
+
+   void car_detail()
+   {
+     print('The detail of the car is: \n Make: $make \t Model: $model \t Year: $year');
+   }
+ }
+ void main()
+ {
+   Car car1 = Car("ZZ Comapny" , "Z123B" , 2020);
+   car1.car_detail();
+ }
+// ---------------------------------------------------
+// ---------------------Exercise 5--------------------
+ class Student{
+   String _name='';
+   int  _age=1;
+
+   //Getter
+   String get name => _name;
+   int    get age  => _age;
+
+   //Setter
+   set name(String name){
+     _name=name;
+   }
+
+   set age(int age){
+     if(age>0) _age=age;
+     else print("Age is greater than zero");
+   }
+
+   void student_detail(){
+     print('The name of the Student is $_name and age is $_age');
+   }
+ }
+ void main(){
+   Student std1 = Student();
+   std1.age=20;
+   std1.name='Zubair';
+   std1.student_detail();
+ }
+// ---------------------------------------------------
+// ---------------------Exercise 6 -------------------
+
+class Vehical{
+
+  void move(){
+    print('Vehical is moving');
+  }
+}
+class Bicycle extends Vehical{
+  @override
+  void move(){
+    print('Bicycle is moving');
+  }
+}
+void main(){
+  Vehical V1 = Vehical();
+  V1.move();
+  Bicycle B1 = Bicycle();
+  B1.move();
+}

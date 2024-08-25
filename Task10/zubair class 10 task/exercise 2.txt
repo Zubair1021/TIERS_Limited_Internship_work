@@ -1,0 +1,188 @@
+import 'package:flutter/material.dart';
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 4; // Set the default selected index to ExerciseScreen
+
+  static List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    AboutScreen(),
+    ContactScreen(),
+    SettingsScreen(),
+    ExerciseScreen(), // New screen added here
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: Text(
+          'My New App',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.deepPurple,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: 'About',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contact_mail),
+            label: 'Contact',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grid_on),
+            label: 'Exercise',
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Home Screen',
+          style: TextStyle(fontSize: 24, color: Colors.green, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+class AboutScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'About Screen',
+          style: TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+class ContactScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Contact Screen',
+          style: TextStyle(fontSize: 24, color: Colors.orange, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+class SettingsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Settings Screen',
+          style: TextStyle(fontSize: 24, color: Colors.lightGreen, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+// New ExerciseScreen class with GridView
+class ExerciseScreen extends StatelessWidget {
+  final List<String> items = [
+    'Ali',
+    'Ahmad',
+    'Muzamil',
+    'Moiz',
+    'Ayesha',
+    'Rubina',
+    'Zainab',
+    'Zubair',
+    'Moiz',
+    'Ayesha',
+    'Rubina',
+    'Zainab',
+    'Zubair',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GridView.builder(
+        padding: EdgeInsets.all(16),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 5, // Number of columns
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          childAspectRatio: 3 / 2, // Width to height ratio of each grid item
+        ),
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            elevation: 5,
+            child: GridTile(
+              header: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.deepPurple,
+                  child: Text(
+                    items[index][0], // Display the first letter of each name
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  items[index],
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
